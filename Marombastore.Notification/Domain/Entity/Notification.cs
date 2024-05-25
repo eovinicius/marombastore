@@ -19,6 +19,11 @@ public class Notification : EntityBase
         CreatedAt = DateTime.Now;
     }
 
+    public Guid GetId()
+    {
+        return Id;
+    }
+
     public void MarkAsRead()
     {
         ReadAt = DateTime.Now;
