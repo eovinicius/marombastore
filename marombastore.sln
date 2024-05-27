@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marombastore.Order", "Marom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marombastore.Notification", "Marombastore.Notification\Marombastore.Notification.csproj", "{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marombastore.Inventory", "Marombastore.Inventory\Marombastore.Inventory.csproj", "{CC230749-7ECB-448D-9414-BD1AECBBDE61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,6 @@
 namespace Marombastore.Core.Seedwork;
 
-public class AggregateRoot : EntityBase
+public abstract class AggregateRoot : EntityBase
 {
     private readonly List<IDomainEvent> _domainEvents = [];
     public AggregateRoot() : base() { }
