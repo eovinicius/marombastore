@@ -1,5 +1,5 @@
 namespace Marombastore.Inventory.Domain.Enum;
-public enum EStatusInventoryBatch
+public enum EStatusBatch
 {
     Available,
     Unavailable,
