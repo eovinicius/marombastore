@@ -7,7 +7,6 @@ public class Notification : EntityBase
     public Guid RecipientId { get; private set; }
     public string Title { get; private set; }
     public string Content { get; private set; }
-    public DateTime CreatedAt { get; private set; }
     public DateTime? ReadAt { get; private set; }
     public DateTime? DeletedAt { get; private set; }
 
@@ -16,7 +15,6 @@ public class Notification : EntityBase
         RecipientId = recipientId;
         Title = title;
         Content = content;
-        CreatedAt = DateTime.Now;
     }
 
     public Guid GetId()

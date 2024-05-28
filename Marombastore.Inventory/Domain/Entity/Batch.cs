@@ -10,7 +10,6 @@ public class Batch : EntityBase
     public EStatusBatch Status { get; private set; }
     public DateTime FabricationAt { get; private set; }
     public DateTime ExpirateAt { get; private set; }
-    public DateTime CreatedAt { get; private set; }
 
     public Batch(
         Guid productId,
@@ -24,7 +23,6 @@ public class Batch : EntityBase
         Quantity = quantity;
         FabricationAt = fabricationAt;
         ExpirateAt = expirateAt;
-        CreatedAt = DateTime.Now;
 
         UpdateStatus();
     }

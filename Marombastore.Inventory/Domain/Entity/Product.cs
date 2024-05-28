@@ -9,10 +9,7 @@ public class Product : AggregateRoot
     public int TotalSold { get; private set; }
     public int TotalQuatity { get; private set; }
     public int ReservedQuatity { get; private set; }
-
     public int AvailableQuantity => TotalQuatity - ReservedQuatity;
-
-    public DateTime CreatedAt { get; private set; }
     public bool Active { get; private set; } = true;
 
     public Product(
@@ -24,7 +21,6 @@ public class Product : AggregateRoot
         Description = description;
         Price = price;
         TotalQuatity = 0;
-        CreatedAt = DateTime.Now;
     }
 
     public void AddQuantity(int quantity)
