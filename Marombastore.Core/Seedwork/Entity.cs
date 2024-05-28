@@ -1,8 +1,8 @@
 namespace Marombastore.Core.Seedwork;
 
-public class EntityBase
+public abstract class EntityBase
 {
-    protected Guid Id { get; set; }
+    public Guid Id { get; private set; }
 
     public EntityBase() => Id = Guid.NewGuid();
 }
