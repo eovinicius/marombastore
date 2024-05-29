@@ -1,9 +1,8 @@
 namespace Marombastore.Core.Seedwork;
 
-public interface IRepository<Aggregate>
+public interface IRepository<Tagregate> where Tagregate : AggregateRoot
 {
-    Task Create(Aggregate aggregate);
-    // TODO: name this method better, like UpdateAsync
-    Task Update(Aggregate aggregate);
-    Task<Aggregate> GetById(Guid id);
+    Task CreateAsync(Tagregate aggregate);
+    Task UpdateAsync(Tagregate aggregate);
+    Task<Tagregate> GetById(Guid id);
 }

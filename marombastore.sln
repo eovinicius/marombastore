@@ -3,21 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marombastore.Core", "Marombastore.Core\Marombastore.Core.csproj", "{DFBE9C27-5314-45ED-86E8-B47452A25B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marombastore.Core", "Marombastore.Core\Marombastore.Core.csproj", "{DFBE9C27-5314-45ED-86E8-B47452A25B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marombastore.Order", "Marombastore.Order\Marombastore.Order.csproj", "{BD12E223-6BBA-4F46-A524-641C63F917BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marombastore.Order", "Marombastore.Order\Marombastore.Order.csproj", "{BD12E223-6BBA-4F46-A524-641C63F917BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marombastore.Notification", "Marombastore.Notification\Marombastore.Notification.csproj", "{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marombastore.Notification", "Marombastore.Notification\Marombastore.Notification.csproj", "{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marombastore.Inventory", "Marombastore.Inventory\Marombastore.Inventory.csproj", "{CC230749-7ECB-448D-9414-BD1AECBBDE61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marombastore.Payment", "Marombastore.Payment\Marombastore.Payment.csproj", "{73B952B5-9537-4143-A8E1-F9C99054121C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marombastore.Inventory", "Marombastore.Inventory\Marombastore.Inventory.csproj", "{CC230749-7ECB-448D-9414-BD1AECBBDE61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DFBE9C27-5314-45ED-86E8-B47452A25B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -32,9 +31,16 @@ Global
 		{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB8E5EE5-4F54-40D6-B1A4-BB7782ACEEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B952B5-9537-4143-A8E1-F9C99054121C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B952B5-9537-4143-A8E1-F9C99054121C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B952B5-9537-4143-A8E1-F9C99054121C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B952B5-9537-4143-A8E1-F9C99054121C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC230749-7ECB-448D-9414-BD1AECBBDE61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
