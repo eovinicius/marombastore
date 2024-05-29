@@ -2,7 +2,7 @@ using Marombastore.Core.Seedwork;
 using Marombastore.Inventory.Domain.Enum;
 
 namespace Marombastore.Inventory.Domain.Entity;
-public class Batch : EntityBase
+public class Batch : AggregateRoot
 {
     public Guid ProductId { get; private set; }
     public Guid InternalCode { get; private set; }

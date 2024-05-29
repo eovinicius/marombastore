@@ -25,7 +25,7 @@ public class ReadNotificationUseCase : IUseCase<ReadNotificationInputDto>
 
         notification.MarkAsRead();
 
-        await _notificationRepository.Update(notification);
+        await _notificationRepository.UpdateAsync(notification);
         await _unitOfWork.Commit();
     }
 }

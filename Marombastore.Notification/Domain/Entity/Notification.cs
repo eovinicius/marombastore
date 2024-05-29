@@ -2,7 +2,7 @@ using Marombastore.Core.Seedwork;
 
 namespace Marombastore.Notification.Domain.Entity;
 
-public class Notification : EntityBase
+public class Notification : AggregateRoot
 {
     public Guid RecipientId { get; private set; }
     public string Title { get; private set; }

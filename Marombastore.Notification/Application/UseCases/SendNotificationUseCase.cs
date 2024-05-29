@@ -5,7 +5,7 @@ using Marombastore.Notification.Domain.Repository;
 
 namespace Marombastore.Notification.Application.UseCases;
 
-public class SendNotificationUseCase : IUseCase<SendNotificationInputDto>
+public class SendNotificationUseCase
 {
     private readonly INotificationRepository _notificationRepository;
     private readonly IUnitOfWork _unitOfWork;
@@ -30,7 +30,7 @@ public class SendNotificationUseCase : IUseCase<SendNotificationInputDto>
 
         var notification = new Entity.Notification(data.RecipientId, data.Title, data.Content);
 
-        await _notificationRepository.Create(notification);
+        await _notificationRepository.CreateAsync(notification);
 
         await _unitOfWork.Commit();
     }
