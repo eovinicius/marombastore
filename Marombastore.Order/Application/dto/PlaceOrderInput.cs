@@ -1,4 +1,4 @@
 namespace Marombastore.Order.Application.dto;
 
-public record PlaceOrderInput(Guid Id, Guid CustomerId, ItemInput[] Items) { }
-public record ItemInput(Guid ItemId, int Quantity) { }
+public record PlaceOrderInput(Guid Id, Guid CustomerId, OrderItem[] OrderItems) { }
+public record OrderItem(Guid ItemId, int Quantity) { }

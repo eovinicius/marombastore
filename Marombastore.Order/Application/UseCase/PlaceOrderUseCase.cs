@@ -21,12 +21,12 @@ public class PlaceOrderUseCase
     {
         var order = new Domain.Entity.Order(input.CustomerId);
 
-        foreach (var item in input.Items)
+        foreach (var orderItem in input.OrderItems)
         {
-            var itemFound = await _itemRepository.GetById(item.ItemId)
-            ?? throw new Exception($"Item {item.ItemId} not found");
+            var item = await _itemRepository.GetById(orderItem.ItemId)
+            ?? throw new Exception($"Item {orderItem.ItemId} not found");
 
-            order.AddItem(itemFound, item.Quantity);
+            order.AddItem(item, orderItem.Quantity);
         }
 
         await _orderRepository.CreateAsync(order);
