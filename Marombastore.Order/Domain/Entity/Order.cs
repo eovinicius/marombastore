@@ -12,14 +12,19 @@ public class Order : AggregateRoot
     public EStatusOrder Status { get; private set; }
     public DateTime? FinishedAt { get; private set; }
 
-    public Order(Guid customerId, List<OrderItem> items)
+    public Order(Guid customerId)
     {
         CustomerId = customerId;
-        Items = items;
-        TotalAmount = items.Sum(item => item.TotalPrice());
+        Items = [];
+        TotalAmount = 0;
         Status = EStatusOrder.PendingPayment;
 
         AddDomainEvent(new OrderCreatedEvent(this));
+    }
+    public void AddItem(Item item, int quantity)
+    {
+        Items.Add(new OrderItem(item, quantity));
+        TotalAmount += item.Price * quantity;
     }
 
     public void PaymentConfirmed()
@@ -47,4 +52,6 @@ public class Order : AggregateRoot
             Status = EStatusOrder.Finished;
         }
     }
+
+    public void GetTotal() => TotalAmount = Items.Sum(item => item.GetTotal());
 }
