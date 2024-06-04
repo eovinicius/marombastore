@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Marombastore.Core.Seedwork;
 using Marombastore.Order.Domain.Enum;
 using Marombastore.Order.Domain.Events;
@@ -23,7 +24,7 @@ public class Order : AggregateRoot
     }
     public void AddItem(Item item, int quantity)
     {
-        Items.Add(new OrderItem(item, quantity));
+        Items.Add(new OrderItem(item, item.Price, quantity));
         TotalAmount += item.Price * quantity;
     }
 
