@@ -5,7 +5,6 @@ using Marombastore.Inventory.Domain.Repository;
 
 namespace Marombastore.Inventory.Application.UseCases;
 public class ReserveProductUseCase
-: IUseCase<ReserveListProductsInputDto, IEnumerable<UnreservebleProductOutputDto>>
 {
     private readonly IProductRepository _productRepository;
     private readonly IUnitOfWork _unitOfWork;

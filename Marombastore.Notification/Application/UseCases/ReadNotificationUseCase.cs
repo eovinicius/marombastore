@@ -4,7 +4,7 @@ using Marombastore.Notification.Domain.Repository;
 
 namespace Marombastore.Notification.Application.UseCases;
 
-public class ReadNotificationUseCase : IUseCase<ReadNotificationInputDto>
+public class ReadNotificationUseCase 
 {
     private readonly INotificationRepository _notificationRepository;
     private readonly IUnitOfWork _unitOfWork;
