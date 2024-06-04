@@ -4,17 +4,21 @@ namespace Marombastore.Order.Domain.Entity;
 
 public class OrderItem : EntityBase
 {
-    public Guid ProductId { get; private set; }
+    public Item Item { get; private set; }
     public int Quantity { get; private set; }
-    public decimal Price { get; private set; }
 
-    public OrderItem(Guid productId, int quantity, decimal price)
+    public OrderItem(Item item, int quantity)
     {
-        ProductId = productId;
+        Item = item;
         Quantity = quantity;
-        Price = price;
+
+        Validate();
     }
 
-    public decimal TotalPrice() => Quantity * Price;
+    public decimal GetTotal() => Item.Price * Quantity;
 
+    private void Validate()
+    {
+        if (Quantity <= 0) throw new Exception("Quantity must be greater than zero");
+    }
 }
