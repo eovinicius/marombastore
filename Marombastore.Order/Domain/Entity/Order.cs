@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Marombastore.Core.Seedwork;
 using Marombastore.Order.Domain.Enum;
 using Marombastore.Order.Domain.Events;
@@ -11,6 +10,7 @@ public class Order : AggregateRoot
     public List<OrderItem> Items { get; private set; }
     public decimal TotalAmount { get; private set; }
     public EStatusOrder Status { get; private set; }
+    public Coupon? Coupon { get; private set; }
     public DateTime? FinishedAt { get; private set; }
 
     public Order(Guid customerId)
@@ -34,8 +34,6 @@ public class Order : AggregateRoot
         {
             Status = EStatusOrder.PaymentConfirmed;
         }
-
-        // AddDomainEvent(new OrderPaymentConfirmedEvent(this));
     }
 
     public void Canceled()
@@ -55,4 +53,17 @@ public class Order : AggregateRoot
     }
 
     public void GetTotal() => TotalAmount = Items.Sum(item => item.GetTotal());
+
+    public void ApplyCoupon(Coupon coupon)
+    {
+        if (!coupon.IsValid())
+            throw new ArgumentException("Invalid coupon");
+
+        Coupon = coupon;
+    }
+
+    public void RemoveCoupon()
+    {
+        Coupon = null;
+    }
 }
