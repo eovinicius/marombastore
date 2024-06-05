@@ -9,6 +9,8 @@ public class Product : AggregateRoot
     public int TotalSold { get; private set; }
     public int TotalQuatity { get; private set; }
     public int ReservedQuatity { get; private set; }
+    public List<Batch> DispobibleBatches { get; set; }
+    public List<Batch> Batches { get; set; }
     public int AvailableQuantity => TotalQuatity - ReservedQuatity;
     public bool Active { get; private set; } = true;
 
@@ -21,6 +23,8 @@ public class Product : AggregateRoot
         Description = description;
         Price = price;
         TotalQuatity = 0;
+        Batches = new List<Batch>();
+        DispobibleBatches = new List<Batch>();
     }
 
     public void AddQuantity(int quantity)
@@ -34,6 +38,11 @@ public class Product : AggregateRoot
     }
 
     public void ReserveQuantity(int quantity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void FetchBatch()
     {
         throw new NotImplementedException();
     }
