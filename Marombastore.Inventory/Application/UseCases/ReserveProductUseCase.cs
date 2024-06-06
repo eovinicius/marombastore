@@ -60,7 +60,7 @@ public class ReserveProductUseCase
         }
 
         product.ReserveQuantity(quantity);
-        _productRepository.UpdateProduct(product);
+        _productRepository.UpdateAsync(product);
 
         return null;
     }

@@ -1,4 +1,6 @@
 using Marombastore.Core.Seedwork;
+using Marombastore.Inventory.Domain.DataTransferObject;
+using Marombastore.Inventory.Domain.Enum;
 
 namespace Marombastore.Inventory.Domain.Entity;
 public class Product : AggregateRoot
@@ -27,22 +29,46 @@ public class Product : AggregateRoot
         DispobibleBatches = new List<Batch>();
     }
 
-    public void AddQuantity(int quantity)
+    // NOTE: não parece certo, mudar depois
+    public void AddBatch(Batch batch)
+    {
+        if (batch.ProductId != Id)
+            throw new Exception("Batch is not from this product");
+
+        Batches.Add(batch);
+        DispobibleBatches.Add(batch);
+        TotalQuatity += batch.Quantity;
+    }
+
+    public void RemoveFromBatch(RemoveBatchDto batch)
     {
         throw new NotImplementedException();
     }
 
-    public void RemoveQuantity(int quantity)
+    public void RemoveFromBatchs(List<RemoveBatchDto> batches)
     {
         throw new NotImplementedException();
     }
 
     public void ReserveQuantity(int quantity)
     {
+        if (quantity > AvailableQuantity)
+            throw new Exception("Quantity not available");
+
+        ReservedQuatity += quantity;
+    }
+
+    public void FetchBatchById(Guid batchId)
+    {
         throw new NotImplementedException();
     }
 
-    public void FetchBatch()
+    public void FetchBatchByInternalCode(Guid internalCode)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void FetchBatchsByStatus(EStatusBatch status)
     {
         throw new NotImplementedException();
     }

@@ -2,7 +2,7 @@ using Marombastore.Core.Seedwork;
 using Marombastore.Inventory.Domain.Enum;
 
 namespace Marombastore.Inventory.Domain.Entity;
-public class Batch : AggregateRoot
+public class Batch : EntityBase
 {
     public Guid ProductId { get; private set; }
     public Guid InternalCode { get; private set; }
@@ -31,8 +31,7 @@ public class Batch : AggregateRoot
     {
         Quantity = quantity;
 
-        if (Quantity <= 0)
-            Status = EStatusBatch.Unavailable;
+        UpdateStatus();
     }
 
     public void UpdateStatus()
